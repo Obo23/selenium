@@ -1,0 +1,21 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Upload and Downloads de Elements",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Elements",
+      "Hacer clic en Upload and Downloads",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar descarga y carga de archivos",
+    "steps": [
+      "Acceder a Upload and Downloads",
+      "Hacer clic en Download",
+      "Comprobar descarga",
+      "Cargar archivo con Choose File",
+      "Comprobar la carga del archivo"
+    ]
+  }
+}

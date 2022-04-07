@@ -1,0 +1,31 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Broken Links de Elements",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Elements",
+      "Hacer clic en Broken Links",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar imágenes",
+    "steps": [
+      "Acceder a Broken Links",
+      "Comprobar la imagen válida",
+      "Comprobar la imagen rota"
+    ]
+  },
+  "scenario3": {
+    "title": "Escenario: Comprobar links",
+    "steps": [
+      "Acceder a Broken Links",
+      "Hacer clic en el link válido",
+      "Comprobar el link válido",
+      "Volver a la pestaña anterior",
+      "Hacer clic en el link roto",
+      "Comprobar el link roto",
+      "Volver a la pestaña anterior"
+    ]
+  }
+}

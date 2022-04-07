@@ -1,0 +1,41 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección TexBox de Elements",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Elements",
+      "Hacer clic en Text Box",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Probar funcionalidad de Text Box con campos correctos",
+    "steps": [
+      "Acceder a TextBox",
+      "Rellenar el campo Full Name",
+      "Rellenar el campo Email con un valor válido",
+      "Rellenar el campo Current Address",
+      "Rellenar el campo Permanent Address",
+      "Hacer clic en Submit",
+      "Comprobar que se ha generado el output correcto"
+    ]
+  },
+  "scenario3": {
+    "title": "Escenario: Probar funcionalidad de Text Box con campos vacíos",
+    "steps": [
+      "Acceder a TextBox",
+      "Hacer clic en Submit"
+    ]
+  },
+  "scenario4": {
+    "title": "Escenario: Probar funcionalidad de Text Box con campos erróneos",
+    "steps": [
+      "Acceder a TextBox",
+      "Rellenar el campo Email con un valor no válido",
+      "Hacer clic en Submit",
+      "Comprobar el error del campo Email"
+    ]
+  }
+}
+
+

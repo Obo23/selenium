@@ -1,0 +1,108 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Web Tablets de Elements",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Elements",
+      "Hacer clic en Web Tablets",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Añadir un usuario a la tabla",
+    "steps": [
+      "Acceder a Web Tablets",
+      "Clicar en el botón Add",
+      "Rellenar el formulario correctamente",
+      "Hacer clic en Submit",
+      "Comprobar la creación del usuario"
+    ]
+  },
+  "scenario3": {
+    "title": "Escenario: Añadir un usuario a la tabla con campos vacíos",
+    "steps": [
+      "Acceder a Web Tablets",
+      "Clicar en el botón Add",
+      "Hacer clic en Submit",
+      "Comprobar los errores en todos los campos"
+    ]
+  },
+  "scenario4": {
+    "title": "Escenario: Añadir un usuario a la tabla con campos erróneos",
+    "steps": [
+      "Acceder a Web Tablets",
+      "Clicar en el botón Add",
+      "Escribir email en Email, A en Age y A en Salary",
+      "Hacer clic en Submit",
+      "Comprobar los errores en los tres campos",
+      "Escribir email@email.com en Email, 99 en Age y 0 en Salary",
+      "Comprobar que ha desaparecido el error en los tres campos"
+    ]
+  },
+  "scenario5": {
+    "title": "Escenario: Comprobar búsqueda de usuarios",
+    "steps": [
+      "Acceder a Web Tablets",
+      "Escribir Z en el bucador",
+      "Comprobar que no aparecen resultados",
+      "Escribir Kierra en el buscador",
+      "Comprobar el resultado"
+    ]
+  },
+  "scenario6": {
+    "title": "Escenario: Comprobar los filtros de usuario",
+    "steps": [
+      "Acceder a Web Tablets",
+      "Hacer clic en el filtro First Name",
+      "Comprobar que el primer resultado es Alden",
+      "Hacer clic en el filtro First Name",
+      "Comprobar que el primer resultado es Kierra",
+      "Hacer clic en el filtro Last Name",
+      "Comprobar que el primer resultado es Cantrell",
+      "Hacer clic en el filtro Last Name",
+      "Comprobar que el primer resultado es Vega",
+      "Hacer clic en el filtro Age",
+      "Comprobar que el primer resultado es 29",
+      "Hacer clic en el filtro Age",
+      "Comprobar que el primer resultado es 45",
+      "Hacer clic en el filtro Email",
+      "Comprobar que el primer resultado es alden@example.com",
+      "Hacer clic en el filtro Email",
+      "Comprobar que el primer resultado es kierra@example.com",
+      "Hacer clic en el filtro Salary",
+      "Comprobar que el primer resultado es 2000",
+      "Hacer clic en el filtro Salary",
+      "Comprobar que el primer resultado es 12000",
+      "Hacer clic en el filtro Department",
+      "Comprobar que el primer resultado es Compliance",
+      "Hacer clic en el filtro Department",
+      "Comprobar que el primer resultado es Legal"
+    ]
+  },
+  "scenario7": {
+    "title": "Escenario: Comprobar la paginación",
+    "steps": [
+      "Acceder a Web Tablets",
+      "Seleccionar 5 rows",
+      "Añadir 3 usuarios",
+      "Clicar en Next",
+      "Comprobar la página",
+      "Clicar en Previous",
+      "Comprobar la página",
+      "Escribir 2 en la paginación",
+      "Comprobar la página",
+      "Seleccionar 5 rows",
+      "Comprobar que se muestran 5 filas",
+      "Seleccionar 10 rows",
+      "Comprobar que se muestran 10 filas",
+      "Seleccionar 20 rows",
+      "Comprobar que se muestran 20 filas",
+      "Seleccionar 25 rows",
+      "Comprobar que se muestran 25 filas",
+      "Seleccionar 50 rows",
+      "Comprobar que se muestran 50 filas",
+      "Seleccionar 100 rows",
+      "Comprobar que se muestran 100 filas"
+    ]
+  }
+}

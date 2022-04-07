@@ -1,0 +1,23 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Buttons de Elements",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Elements",
+      "Hacer clic en Buttons",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar los clics del ratón",
+    "steps": [
+      "Acceder a Buttons",
+      "Hacer doble clic en Double Click Me",
+      "Comprobar que aparece el mensaje: You have done a double click",
+      "Hacer clic derecho en Right Click Me",
+      "Comprobar que aparece el mensaje: You have done a right click",
+      "Hacer clic en Click Me",
+      "Comprobar que aparece el mensaje: You have done a dynamic click"
+    ]
+  }
+}

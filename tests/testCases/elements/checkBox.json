@@ -1,0 +1,80 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Check Box de Elements",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Elements",
+      "Hacer clic en Check Box",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Probar funcionalidad de check box de la sección Check Box",
+    "steps": [
+      "Acceder a Check Box",
+      "Hacer clic en '+' y en el check box de Home",
+      "Comprobar que se seleccionan todos los elementos",
+      "Hacer clic en el check box de Home y en el check box de Desktop",
+      "Comprobar que se seleccionan los check box de Desktop, Notes y Commands",
+      "Hacer clic en el check box de Desktop y en el check box de Notes",
+      "Comprobar que se selecciona el check box de Notes",
+      "Hacer clic en el check box de Notes y en el check box de Commands",
+      "Comprobar que se selecciona el check box de Commands",
+      "Hacer clic en el check box de Commands y en el check box de Documents",
+      "Comprobar que se seleccionan todos los check box de la sección de Documents incluido el check box de Documents",
+      "Hacer clic en el check box de Documents y en el check box de WorkSpaces",
+      "Comprobar que se seleccionan todos los check box de la sección de WorkSpace incluido el check box de WorkSpace",
+      "Hacer clic en el check box de WorkSpace y en el check box de React",
+      "Comprobar que se selecciona el check box de React",
+      "Hacer clic en el check box de React y en el check box de Angular",
+      "Comprobar que se selecciona el check box de Angular",
+      "Hacer clic en el check box de Angular y en el check box de Veu",
+      "Comprobar que se selecciona el check box de Veu",
+      "Hacer clic en el check box de Veu y en el check box de Office",
+      "Comprobar que se seleccionan todos los check box de la sección de Office incluido el check box de Office",
+      "Hacer clic en el check box de Office y en el check box de Public",
+      "Comprobar que se selecciona el check box de Public",
+      "Hacer clic en el check box de Public y en el check box de Private",
+      "Comprobar que se selecciona el check box de Private",
+      "Hacer clic en el check box de Private y en el check box de Classified",
+      "Comprobar que se selecciona el check box de Classified",
+      "Hacer clic en el check box de Classified y en el check box de General",
+      "Comprobar que se selecciona el check box de General",
+      "Hacer clic en el check box de General y en el check box de Downloads",
+      "Comprobar que se seleccionan todos los check box de la sección de Downloads incluido el check box de Downloads",
+      "Hacer clic en el check box de Downloads y en el check box de Word File.doc",
+      "Comprobar que se selecciona el check box de Word File.doc",
+      "Hacer clic en el check box de Word File.doc y en el check box de Excel File.doc",
+      "Comprobar que se selecciona el check box de Excel File.doc"
+    ]
+  },
+  "scenario3": {
+    "title": "Escenario: Probar funcionalidad de despliegues de la sección Check Box",
+    "steps": [
+      "Acceder a Check Box",
+      "Hacer clic en el desplegable de Home",
+      "Comprobar que se despliegan los elementos Desktop, Documents y Downloads",
+      "Hacer clic en el desplegable de Desktop",
+      "Comprobar que se despliegan los elementos Notes y Commands",
+      "Hacer clic en el desplegable de Documents",
+      "Comprobar que se despliegan los elementos WorkSpace y Office",
+      "Hacer clic en el desplegable de WorkSpace",
+      "Comprobar que se despliegan los elementos React, Angular y Veu",
+      "Hacer clic en el desplegable de Office",
+      "Comprobar que se despliegan los elementos Public, Private, Classified y General",
+      "Hacer clic en el desplegable de Downloads",
+      "Comprobar que se despliegan los elementos Word File.doc y Excel File.doc"
+    ]
+  },
+  
+  "scenario4": {
+    "title": "Escenario: Probar funcionalidad de los botones '+' y '-'",
+    "steps": [
+      "Acceder a Check Box",
+      "Hacer clic en '+'",
+      "Comprobar que se ven todos los elementos",
+      "Hacer clic en '-'",
+      "Comprobar que no se ven todos los elementos"
+    ]
+  }
+}

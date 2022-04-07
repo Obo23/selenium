@@ -1,0 +1,21 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Radio Button de Elements",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Elements",
+      "Hacer clic en Radio Button",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Probar funcionalidad de Radio Button",
+    "steps": [
+      "Acceder a Radio Button",
+      "Hacer clic en Yes",
+      "Comprobar el texto, You have selected Yes",
+      "Hacer clic en Impressive",
+      "Comprobar el texto, You have selected Impressive"
+    ]
+  }
+}

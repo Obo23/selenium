@@ -1,0 +1,35 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Links de Elements",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Elements",
+      "Hacer clic en Links",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar links",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Home",
+      "Comprobar que redirige a la landing en una nueva pestaña y cerrarla",
+      "Hacer clic en HomeXXXXX",
+      "Comprobar que redirige a la landing en una nueva pestaña y cerrarla",
+      "Hacer clic en Created",
+      "Comprobar que el status 201",
+      "Hacer clic en No Content",
+      "Comprobar que el status 204",
+      "Hacer clic en Moved",
+      "Comprobar que el status 301",
+      "Hacer clic en Bad Request",
+      "Comprobar que el status 400",
+      "Hacer clic en Unauthorized",
+      "Comprobar que el status 401",
+      "Hacer clic en Forbidden",
+      "Comprobar que el status 403",
+      "Hacer clic en Not Found",
+      "Comprobar que el status 404"
+    ]
+  }
+}

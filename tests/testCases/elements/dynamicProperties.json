@@ -1,0 +1,23 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Dynamic Properties de Elements",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Elements",
+      "Hacer clic en Dynamic Properties",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Esperar 5 segundos y comprobar botones de la sección",
+    "steps": [
+      "Acceder a Dynamic Properties",
+      "Comprobar que el botón Will enable 5 seconds no funciona",
+      "Comprobar que el botón Color Change tiene las letras blancas",
+      "Espear 5 segundos",
+      "Comprobar que el botón Will enable 5 seconds funciona",
+      "Comprobar que el botón Color Change tiene las letras rojas",
+      "Comprobar que el botón Visible After 5 Seconds funciona"
+    ]
+  }
+}
