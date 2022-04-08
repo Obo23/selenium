@@ -1,10 +1,11 @@
 module.exports = {
   test: async function () {
-    const { By, Key, Builder } = require("selenium-webdriver");
+    const { By, Builder } = require("selenium-webdriver");
     let driver = new Builder().forBrowser("chrome").build();
     const buttons = require("../../testCases/elements/buttons.json");
     const checkStep = require("../../functions/checkStep");
-    let step = 0;
+    let step = 0,
+      error = false;
 
     //Scenario 1
     checkStep.starScenario(buttons.scenario1.title);
@@ -20,10 +21,13 @@ module.exports = {
         if (i === 2) await driver.findElement(By.id("item-4")).click();
         if (i === 3) {
           const url = await driver.getCurrentUrl();
-          if (url !== "https://demoqa.com/buttons")
+          if (url !== "https://demoqa.com/buttons") {
+            error = true;
             checkStep.error(buttons.scenario1.steps[step]);
+          }
         }
-        checkStep.checked(buttons.scenario1.steps[step]);
+        if (error === false) checkStep.checked(buttons.scenario1.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();
@@ -66,11 +70,12 @@ module.exports = {
           messageElement = await driver.findElement(By.id(messageId));
           messageText = await messageElement.getText();
           if (messageText !== messageExpected) {
+            error = true;
             checkStep.error(buttons.scenario2.steps[step]);
-            console.log(messageText);
           }
         }
-        checkStep.checked(buttons.scenario2.steps[step]);
+        if (error === false) checkStep.checked(buttons.scenario2.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();

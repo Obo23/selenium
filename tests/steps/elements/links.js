@@ -1,12 +1,12 @@
-const { delay } = require("../../functions/general");
-
 module.exports = {
   test: async function () {
-    const { By, Key, Builder } = require("selenium-webdriver");
+    const { By, Builder } = require("selenium-webdriver");
     let driver = new Builder().forBrowser("chrome").build();
     const links = require("../../testCases/elements/links.json");
     const checkStep = require("../../functions/checkStep");
-    let step = 0;
+    const { delay } = require("../../functions/general");
+    let step = 0,
+      error = false;
 
     //Scenario 1
     checkStep.starScenario(links.scenario1.title);
@@ -22,10 +22,13 @@ module.exports = {
         if (i === 2) await driver.findElement(By.id("item-5")).click();
         if (i === 3) {
           const url = await driver.getCurrentUrl();
-          if (url !== "https://demoqa.com/links")
+          if (url !== "https://demoqa.com/links") {
+            error = true;
             checkStep.error(links.scenario1.steps[step]);
+          }
         }
-        checkStep.checked(links.scenario1.steps[step]);
+        if (error === false) checkStep.checked(links.scenario1.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();
@@ -55,8 +58,10 @@ module.exports = {
           const window = await driver.getAllWindowHandles();
           await driver.switchTo().window(window[1]);
           currentUrl = await driver.getCurrentUrl();
-          if (currentUrl !== "https://demoqa.com/")
+          if (currentUrl !== "https://demoqa.com/") {
+            error = true;
             checkStep.error(browserWindows.scenario2.steps[step]);
+          }
           await driver.close();
           await driver.switchTo().window(window[0]);
         }
@@ -75,7 +80,8 @@ module.exports = {
           ).search("<b>" + linkStatus + "</b>");
           if (test === -1) checkStep.error(links.scenario2.steps[step]);
         }
-        checkStep.checked(links.scenario2.steps[step]);
+        if (error === false) checkStep.checked(links.scenario2.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();

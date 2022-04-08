@@ -1,3 +1,5 @@
+const { delay } = require("../../functions/general");
+
 module.exports = {
   test: async function () {
     const { By, Key, Builder } = require("selenium-webdriver");
@@ -5,7 +7,8 @@ module.exports = {
     const webTables = require("../../testCases/elements/webTables.json");
     const checkStep = require("../../functions/checkStep");
     const general = require("../../functions/general");
-    let step = 0;
+    let step = 0,
+      error = false;
 
     //Scenario 1
     checkStep.starScenario(webTables.scenario1.title);
@@ -21,10 +24,13 @@ module.exports = {
         if (i === 2) await driver.findElement(By.id("item-3")).click();
         if (i === 3) {
           const url = await driver.getCurrentUrl();
-          if (url !== 'https://demoqa.com/webtables')
+          if (url !== "https://demoqa.com/webtables") {
+            error = true;
             checkStep.error(webTables.scenario1.steps[step]);
+          }
         }
-        checkStep.checked(webTables.scenario1.steps[step]);
+        if (error === false) checkStep.checked(webTables.scenario1.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();
@@ -53,7 +59,7 @@ module.exports = {
         if (i % 2 === 1) {
           if (i === 1) id = "addNewRecordButton";
           if (i === 3) id = "submit";
-          
+          await driver.findElement(By.id(id)).click();
         }
         if (i === 2) {
           for (let j = 0; j < formIds.length; j++) {
@@ -71,10 +77,14 @@ module.exports = {
                 )
               )
               .getText();
-            if (text.localeCompare(newUser[j]) === -1) Promise.reject();
+            if (text.localeCompare(newUser[j]) === -1) {
+              error = true;
+              checkStep.error(webTables.scenario2.steps[step]);
+            }
           }
         }
-        checkStep.checked(webTables.scenario2.steps[step]);
+        if (error === false) checkStep.checked(webTables.scenario2.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();
@@ -94,14 +104,16 @@ module.exports = {
           await driver.findElement(By.id(id)).click();
         }
         if (i === 2) {
+          await delay(500);
           for (let j = 0; j < formIds.length; j++) {
             const color = await driver
               .findElement(By.id(formIds[j]))
               .getCssValue("border-color");
-            this.checkColor(color, "Red");
+              this.checkColor(color, "Red");
           }
         }
-        checkStep.checked(webTables.scenario3.steps[step]);
+        if (error === false) checkStep.checked(webTables.scenario3.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();
@@ -197,10 +209,14 @@ module.exports = {
                 )
               )
               .getText();
-            if (text.localeCompare(user3[j]) === -1) Promise.reject();
+            if (text.localeCompare(user3[j]) === -1) {
+              error = true;
+              checkStep.error(webTables.scenario5.steps[step]);
+            }
           }
         }
-        checkStep.checked(webTables.scenario5.steps[step]);
+        if (error === false) checkStep.checked(webTables.scenario5.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();
@@ -258,10 +274,14 @@ module.exports = {
                 )
               )
               .getText();
-            if (text.localeCompare(user[j]) === -1) Promise.reject();
+            if (text.localeCompare(user[j]) === -1) {
+              error = true;
+              checkStep.error(webTables.scenario6.steps[step]);
+            }
           }
         }
-        checkStep.checked(webTables.scenario6.steps[step]);
+        if (error === false) checkStep.checked(webTables.scenario6.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();
@@ -312,10 +332,16 @@ module.exports = {
             )
             .getAttribute("value");
           if (i === 4 || i === 8) {
-            if (value != 2) Promise.reject();
+            if (value != 2) {
+              error = true;
+              checkStep.error(webTables.scenario7.steps[step]);
+            }
           }
           if (i === 6) {
-            if (value != 1) Promise.reject();
+            if (value != 1) {
+              error = true;
+              checkStep.error(webTables.scenario7.steps[step]);
+            }
           }
         }
         if (i === 7)
@@ -339,7 +365,8 @@ module.exports = {
             )
           );
         }
-        checkStep.checked(webTables.scenario7.steps[step]);
+        if (error === false) checkStep.checked(webTables.scenario7.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();

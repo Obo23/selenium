@@ -1,10 +1,11 @@
 module.exports = {
   test: async function () {
-    const { By, Key, Builder } = require("selenium-webdriver");
+    const { By, Builder } = require("selenium-webdriver");
     let driver = new Builder().forBrowser("chrome").build();
     const radioButton = require("../../testCases/elements/radioButton.json");
     const checkStep = require("../../functions/checkStep");
-    let step = 0;
+    let step = 0,
+      error = false;
 
     //Scenario 1
     checkStep.starScenario(radioButton.scenario1.title);
@@ -20,10 +21,14 @@ module.exports = {
         if (i === 2) await driver.findElement(By.id("item-2")).click();
         if (i === 3) {
           const url = await driver.getCurrentUrl();
-          if (url !== 'https://demoqa.com/radio-button')
+          if (url !== "https://demoqa.com/radio-button") {
+            error = true;
             checkStep.error(radioButton.scenario1.steps[step]);
+          }
         }
-        checkStep.checked(radioButton.scenario1.steps[step]);
+        if (error === false)
+          checkStep.checked(radioButton.scenario1.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();
@@ -50,9 +55,14 @@ module.exports = {
           const text = await driver
             .findElement(By.className("text-success"))
             .getText();
-          if (text.localeCompare(textExpected) === -1) Promise.reject();
+          if (text.localeCompare(textExpected) === -1) {
+            error = true;
+            checkStep.error(radioButton.scenario2.steps[step]);
+          }
         }
-        checkStep.checked(radioButton.scenario2.steps[step]);
+        if (error === false)
+          checkStep.checked(radioButton.scenario2.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();

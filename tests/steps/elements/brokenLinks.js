@@ -1,12 +1,11 @@
-const { delay } = require("../../functions/general");
-
 module.exports = {
   test: async function () {
-    const { By, Key, Builder } = require("selenium-webdriver");
+    const { By, Builder } = require("selenium-webdriver");
     let driver = new Builder().forBrowser("chrome").build();
     const brokenLinks = require("../../testCases/elements/brokenLinks.json");
     const checkStep = require("../../functions/checkStep");
-    let step = 0;
+    let step = 0,
+      error = false;
 
     //Scenario 1
     checkStep.starScenario(brokenLinks.scenario1.title);
@@ -22,10 +21,14 @@ module.exports = {
         if (i === 2) await driver.findElement(By.id("item-6")).click();
         if (i === 3) {
           const url = await driver.getCurrentUrl();
-          if (url !== 'https://demoqa.com/broken')
+          if (url !== "https://demoqa.com/broken") {
+            error = true;
             checkStep.error(brokenLinks.scenario1.steps[step]);
+          }
         }
-        checkStep.checked(brokenLinks.scenario1.steps[step]);
+        if (error === false)
+          checkStep.checked(brokenLinks.scenario1.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();
@@ -53,10 +56,14 @@ module.exports = {
           if (
             (i === 1 && widthSize === "0" && heightSize === "0") ||
             (i === 2 && widthSize !== "0" && heightSize !== "0")
-          )
+          ) {
+            error = true;
             checkStep.error(brokenLinks.scenario2.steps[step]);
+          }
         }
-        checkStep.checked(brokenLinks.scenario2.steps[step]);
+        if (error === false)
+          checkStep.checked(brokenLinks.scenario2.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();

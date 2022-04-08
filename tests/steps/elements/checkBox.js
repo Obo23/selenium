@@ -1,10 +1,11 @@
 module.exports = {
   test: async function () {
-    const { By, Key, Builder } = require("selenium-webdriver");
+    const { By, Builder } = require("selenium-webdriver");
     let driver = new Builder().forBrowser("chrome").build();
     const checkBox = require("../../testCases/elements/checkBox.json");
     const checkStep = require("../../functions/checkStep");
-    let step = 0;
+    let step = 0,
+      error = false;
 
     //Scenario 1
     checkStep.starScenario(checkBox.scenario1.title);
@@ -20,17 +21,20 @@ module.exports = {
         if (i === 2) await driver.findElement(By.id("item-1")).click();
         if (i === 3) {
           const url = await driver.getCurrentUrl();
-          if (url !== 'https://demoqa.com/checkBox')
+          if (url !== "https://demoqa.com/checkbox") {
+            error = true;
             checkStep.error(checkBox.scenario1.steps[step]);
+          }
         }
-        checkStep.checked(checkBox.scenario1.steps[step]);
+        if (error === false) checkStep.checked(checkBox.scenario1.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();
         checkStep.error(checkBox.scenario1.steps[step]);
       }
     }
-    
+
     //Scenario 2
     step = 0;
     checkStep.starScenario(checkBox.scenario2.title);
@@ -185,12 +189,16 @@ module.exports = {
           if (i === 34) elementsSel = ["excelFile"];
           for (let j = 0; j < elementsSel.length; j++) {
             const result = await driver
-              .findElement(By.xpath(`//*[@id="result"]/span[${j + 2}]`))
+              .findElement(By.xpath(`//*[@id='result']/span[${j + 2}]`))
               .getText();
-            if (elementsSel[j].localeCompare(result) === -1) Promise.reject();
+            if (elementsSel[j].localeCompare(result) === -1) {
+              error = true;
+              checkStep.error(checkBox.scenario2.steps[step]);
+            }
           }
         }
-        checkStep.checked(checkBox.scenario2.steps[step]);
+        if (error === false) checkStep.checked(checkBox.scenario2.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();
@@ -285,13 +293,15 @@ module.exports = {
           try {
             for (let j = 0; j < elements.length; j++) {
               await driver.findElement(By.id(elements[j])).getAttribute("id");
+              error = true;
               checkStep.error(checkBox.scenario4.steps[step]);
             }
           } catch {
             continue;
           }
         }
-        checkStep.checked(checkBox.scenario4.steps[step]);
+        if (error === false) checkStep.checked(checkBox.scenario4.steps[step]);
+        error = false;
         step++;
       } catch (e) {
         await driver.close();
