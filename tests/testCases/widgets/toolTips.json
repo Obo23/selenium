@@ -1,0 +1,25 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Tool Tips de Widgets",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Widgets",
+      "Hacer clic en Tool Tips",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar las Tool Tips de la página",
+    "steps": [
+      "Acceder a Tool Tips",
+      "Hacer hover sobre el botón Hover me to see",
+      "Comprobar que aparece la tool tip",
+      "Hacer hover sobre el input Hover me to see",
+      "Comprobar que aparece la tool tip",
+      "Hacer hover sobre la palabra Contrary",
+      "Comprobar que aparece la tool tip",
+      "Hacer hover sobre la palabra 1.10.32",
+      "Comprobar que aparece la tool tip"
+    ]
+  }
+}

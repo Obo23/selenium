@@ -1,0 +1,28 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Progress Bar de Widgets",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Widgets",
+      "Hacer clic en Progress Bar",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar el funcionamiento del Progress Bar",
+    "steps": [
+      "Acceder a Progress Bar",
+      "Hacer clic en el botón Start",
+      "Comprobar que aparece el botón Stop",
+      "Esperar 5 segundos",
+      "Hacer clic en el botón Stop",
+      "Comprobar que aparece el botón Start",
+      "Hacer clic en el botón Start",
+      "Esperar 5 segundos",
+      "Comprobar que aparece el botón Reset",
+      "Comprobar que el valor de la barra es 100",
+      "Hacer clic en el botón Reset",
+      "Comprobar que aparece el botón Start"
+    ]
+  }
+}

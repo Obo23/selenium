@@ -1,0 +1,39 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Select Menu de Widgets",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Widgets",
+      "Hacer clic en Select Menu",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar el menu Select Value",
+    "steps": [
+      "Acceder a Select Menu",
+      "Hacer clic en el menu Select Value",
+      "Escribir 'an' en el menu y pulsar enter para seleccionar la opción",
+      "Comprobar que la opción es Another Root Option",
+      "Hacer clic en el menu Select One",
+      "Escribir 'm' en el menu y seleccionar la tercera opción",
+      "Comprobar que la opción Ms",
+      "Hacer clic en el menu Old Style Select Menu",
+      "Seleccionar la opción White",
+      "Hacer clic en el menu Multiselect drop down",
+      "Seleccionar los colores Green y Blue con la tecla Enter",
+      "Comprobar la selección",
+      "Escibir la letra d",
+      "Seleccionar el color Red",
+      "Comprobar la selección",
+      "Eliminar la selección de Red con la tecla Back space",
+      "Comprobar la eliminación",
+      "Eliminar la selección de Blue con su 'x' correspondiente",
+      "Comprobar la eliminación",
+      "Eliminar la selección de Black con la 'x' global",
+      "Comprobar la eliminación",
+      "Seleccionar Volvo en el menu Standard multi select",
+      "Hacer una captura de pantalla para comprobar la selección de los menus Old Style Select Menu y Standard multi select"
+    ]
+  }
+}

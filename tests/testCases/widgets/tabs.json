@@ -1,0 +1,24 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Tabs de Widgets",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Widgets",
+      "Hacer clic en Tabs",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar el funcionamiento de las Tabs",
+    "steps": [
+      "Acceder a Tabs",
+      "Hacer clic en la tab Use",
+      "Comprobar que la tab es Use",
+      "Hacer clic en la tab Origin",
+      "Comprobar que la tab es Origin",
+      "Hacer clic en la tab What",
+      "Comprobar que la tab es What",
+      "Comprobar que la tab More está desactivada"
+    ]
+  }
+}

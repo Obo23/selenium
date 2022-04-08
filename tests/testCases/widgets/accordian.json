@@ -1,0 +1,23 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Accordian de Widgets",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Widgets",
+      "Hacer clic en Accordian",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar los acordeones",
+    "steps": [
+      "Acceder a Accordian",
+      "Hacer clic en la tercera sección",
+      "Comprobar el despliegue de la tercera sección",
+      "Hacer clic en la segunda sección",
+      "Comprobar el despliegue de la segunda sección",
+      "Hacer clic en la primera sección",
+      "Comprobar el despliegue de la primera sección"
+    ]
+  }
+}

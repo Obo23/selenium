@@ -1,0 +1,21 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Slider de Widgets",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Widgets",
+      "Hacer clic en Slider",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar el funcionamiento del slider",
+    "steps": [
+      "Acceder a Slider",
+      "Desplazar el slider hasta el 0",
+      "Comprobar el resultado",
+      "Clicar y desplazar el slider hasta el 100",
+      "Comprobar el resultado"
+    ]
+  }
+}

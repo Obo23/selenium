@@ -1,0 +1,33 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Menu de Widgets",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Widgets",
+      "Hacer clic en Menu",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar los Menus de la página",
+    "steps": [
+      "Acceder a Menu",
+      "Posicionar el ratón en Main Item 1",
+      "Hacer una captura de pantalla para comprobar la posición",
+      "Posicionar el ratón en Main Item 2",
+      "Hacer una captura de pantalla para comprobar la posición",
+      "Posicionar el ratón en el primer Sub Item",
+      "Hacer una captura de pantalla para comprobar la posición",
+      "Posicionar el ratón en el segundo Sub Item",
+      "Hacer una captura de pantalla para comprobar la posición",
+      "Posicionar el ratón en Sub Sub List",
+      "Hacer una captura de pantalla para comprobar la posición",
+      "Posicionar el ratón en Sub Sub Item 1",
+      "Hacer una captura de pantalla para comprobar la posición",
+      "Posicionar el ratón en Sub Sub Item 2",
+      "Hacer una captura de pantalla para comprobar la posición",
+      "Posicionar el ratón en Main Item 3",
+      "Hacer una captura de pantalla para comprobar la posición"
+    ]
+  }
+}

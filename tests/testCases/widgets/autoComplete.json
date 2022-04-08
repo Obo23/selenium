@@ -1,0 +1,44 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Auto Complete de Widgets",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Widgets",
+      "Hacer clic en Auto Complete",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar el auto complete multiple",
+    "steps": [
+      "Acceder a Auto Complete",
+      "Escibir la letra a",
+      "Seleccionar el color Black",
+      "Comprobar la selección",
+      "Escibir la letra b",
+      "Seleccionar el color Blue",
+      "Comprobar la selección",
+      "Escibir la letra d",
+      "Seleccionar el color Red",
+      "Comprobar la selección",
+      "Eliminar la selección de Red con la tecla Back space",
+      "Comprobar la eliminación",
+      "Eliminar la selección de Blue con su 'x' correspondiente",
+      "Comprobar la eliminación",
+      "Eliminar la selección de Black con la 'x' global",
+      "Comprobar la eliminación"
+    ]
+  },
+  "scenario3": {
+    "title": "Escenario: Comprobar el auto complete simple",
+    "steps": [
+      "Acceder a Auto Complete",
+      "Escibir la letra e",
+      "Seleccionar el color Red",
+      "Comprobar la selección",
+      "Escibir la letra g",
+      "Seleccionar el color Green",
+      "Comprobar la selección"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Data Picker de Widgets",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Widgets",
+      "Hacer clic en Data Picker",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Seleccionar una fecha",
+    "steps": [
+      "Acceder a Data Picker",
+      "Seleccionar la fecha 12/31/2000",
+      "Comprobar la selección"
+    ]
+  },
+  "scenario3": {
+    "title": "Escenario: Seleccionar una fecha y una hora",
+    "steps": [
+      "Acceder a Data Picker",
+      "Seleccionar la fecha December 31, 2000 10:00 AM",
+      "Comprobar la selección"
+    ]
+  }
+}
