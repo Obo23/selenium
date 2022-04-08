@@ -1,0 +1,126 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Practice Form de Forms",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Forms",
+      "Hacer clic en Practice Form",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Rellenar el formulario correctamente",
+    "steps": [
+      "Acceder a Practice Form",
+      "Rellenar el campo First Name con 'Name'",
+      "Rellenar el campo Last Name con 'Last'",
+      "Rellenar el campo Email con 'email@email.com'",
+      "Seleccionar la opción 'Other' en Gender",
+      "Rellenar el campo Mobile con '1234567890'",
+      "Seleccionar la fecha 31-12-2000 en Date of Birth",
+      "Rellenar el campo Subjects con 'Maths'",
+      "Seleccionar la opción Sports en Hobbies",
+      "Subir una imagen de la ruta '../public/img/sampleFile.jpeg' en el campo Picture",
+      "Rellenar el campo Current Address con 'Address'",
+      "Seleccionar NCR en el campo State",
+      "Seleccionar Delhi en el campo City",
+      "Hacer clic en Submit",
+      "Comprobar que aparece un modal con los datos correctos",
+      "Cerrar el modal"
+    ]
+  },
+  "scenario3": {
+    "title": "Escenario: Comprobar los errores del formulario",
+    "steps": [
+      "Acceder a Practice Form",
+      "Hacer clic en Submit",
+      "Comprobar que aparecen errores en los campos First y Last Name, Gender, Mobile Number",
+      "Rellenar el campo First Name con 'Name'",
+      "Rellenar el campo Last Name con 'Last'",
+      "Seleccionar la opción 'Female' en Gender",
+      "Rellenar el campo Mobile con '123456789'",
+      "Hacer clic en Submit",
+      "Comprobar que aparece un error en el campo Mobile Number"
+    ]
+  },
+  "scenario4": {
+    "title": "Escenario: Comprobar opciones del campo Gender",
+    "steps": [
+      "Acceder a Practice Form",
+      "Rellenar el campo First Name con 'Name'",
+      "Rellenar el campo Last Name con 'Last'",
+      "Rellenar el campo Mobile con '1234567890'",
+      "Seleccionar la opción 'Male' en Gender",
+      "Hacer clic en Submit",
+      "Comprobar que aparece un modal con la selección Male",
+      "Cerrar el modal",
+      "Rellenar el campo First Name con 'Name'",
+      "Rellenar el campo Last Name con 'Last'",
+      "Rellenar el campo Mobile con '1234567890'",
+      "Seleccionar la opción 'Female' en Gender",
+      "Hacer clic en Submit",
+      "Comprobar que aparece un modal con la selección Female",
+      "Cerrar el modal",
+      "Rellenar el campo First Name con 'Name'",
+      "Rellenar el campo Last Name con 'Last'",
+      "Rellenar el campo Mobile con '1234567890'",
+      "Seleccionar la opción 'Other' en Gender",
+      "Hacer clic en Submit",
+      "Comprobar que aparece un modal con la selección Other",
+      "Cerrar el modal"
+    ]
+  },
+  "scenario5": {
+    "title": "Escenario: Comprobar el autocomplete de Subjects",
+    "steps": [
+      "Acceder a Practice Form",
+      "Escibir la letra m",
+      "Seleccionar Maths",
+      "Comprobar la selección",
+      "Escibir la letra a",
+      "Seleccionar Accounting",
+      "Comprobar la selección",
+      "Escibir la letra p",
+      "Seleccionar Physics",
+      "Comprobar la selección",
+      "Eliminar la selección de Physics con la tecla Back space",
+      "Comprobar la eliminación",
+      "Eliminar la selección de Accounting con su 'x' correspondiente",
+      "Comprobar la eliminación",
+      "Eliminar la selección de Maths con la 'x' global",
+      "Comprobar la eliminación"
+    ]
+  },
+  "scenario6": {
+    "title": "Escenario: Comprobar la selección multiple de Hobbies",
+    "steps": [
+      "Acceder a Practice Form",
+      "Rellenar el campo First Name con 'Name'",
+      "Rellenar el campo Last Name con 'Last'",
+      "Rellenar el campo Mobile con '1234567890'",
+      "Seleccionar la opción 'Oher' en Gender",
+      "Seleccionar la opción 'Sports' en Hobbies",
+      "Hacer clic en Submit",
+      "Comprobar que aparece un modal con la selección Sports",
+      "Cerrar el modal",
+      "Acceder a Practice Form",
+      "Rellenar el campo First Name con 'Name'",
+      "Rellenar el campo Last Name con 'Last'",
+      "Rellenar el campo Mobile con '1234567890'",
+      "Seleccionar la opción 'Oher' en Gender",
+      "Seleccionar la opción 'Reading' en Hobbies",
+      "Hacer clic en Submit",
+      "Comprobar que aparece un modal con la selección Reading",
+      "Cerrar el modal",
+      "Acceder a Practice Form",
+      "Rellenar el campo First Name con 'Name'",
+      "Rellenar el campo Last Name con 'Last'",
+      "Rellenar el campo Mobile con '1234567890'",
+      "Seleccionar la opción 'Oher' en Gender",
+      "Seleccionar la opción 'Music' en Hobbies",
+      "Hacer clic en Submit",
+      "Comprobar que aparece un modal con la selección Music",
+      "Cerrar el modal"
+    ]
+  }
+}
