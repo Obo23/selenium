@@ -1,0 +1,29 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Alerts de Alerts, Frame & Windows",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Alerts, Frame & Windows",
+      "Hacer clic en Alerts",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Probar botones de la sección",
+    "steps": [
+      "Acceder a Alerts",
+      "Hacer clic en el primer botón",
+      "Comprobar que aparece la alert y hacer clic en OK",
+      "Hacer clic en el segundo botón",
+      "Esperar 5s, comprobar que aparece la alerta y hacer clic en OK",
+      "Hacer clic en el tercer botón",
+      "Aceptar la alert y comprobar el mensaje 'You selected Accept'",
+      "Hacer clic en el tercer botón",
+      "Cancelar la alert y comprobar el mensaje 'You selected Cancel'",
+      "Hacer clic en el cuarto botón",
+      "Escribir Test y comprobar el mensaje 'You entered Test'",
+      "Hacer clic en el cuarto botón",
+      "Cancelar la alert y comprobar que se cierra'"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Nested Frames de Alerts, Frame & Windows",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Alerts, Frame & Windows",
+      "Hacer clic en Nested Frames",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar la fuente HTML de los frames",
+    "steps": [
+      "Acceder a Nested Frames",
+      "Acceder al frame padre",
+      "Comprobar que es posible interactuar con el, comprobando el texto",
+      "Acceder al frame hijo",
+      "Comprobar que es posible interactuar con el, comprobando el texto"
+    ]
+  }
+}

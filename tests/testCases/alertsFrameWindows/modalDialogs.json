@@ -1,0 +1,21 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Modal Dialogs de Alerts, Frame & Windows",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Alerts, Frame & Windows",
+      "Hacer clic en Modal Dialogs",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar los modales de los botones",
+    "steps": [
+      "Acceder a Modal Dialogs",
+      "Hacer clic en Small modal",
+      "Comprobar el modal y hacer clic en Close",
+      "Hacer clic en Large modal",
+      "Comprobar el modal y hacer clic en Close"
+    ]
+  }
+}
