@@ -58,6 +58,7 @@ async function tests() {
   await progressBar.test();
   await tabs.test();
   await toolTips.test();
+  await menu.test();
   await selectMenu.test();
 
   //Interactions
