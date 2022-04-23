@@ -14,7 +14,10 @@ module.exports = {
     checkStep.starScenario(webTables.scenario1.title);
     for (let i = 0; i < webTables.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(
@@ -55,7 +58,10 @@ module.exports = {
     newUser = ["First", "Last", 99, "email@email.com", 0, "Department"];
     for (let i = 0; i < webTables.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/webtables");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/webtables");
+          await driver.manage().window().fullscreen();
+        }
         if (i % 2 === 1) {
           if (i === 1) id = "addNewRecordButton";
           if (i === 3) id = "submit";
@@ -97,7 +103,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < webTables.scenario3.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/webtables");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/webtables");
+          await driver.manage().window().fullscreen();
+        }
         if (i < 3 && i != 0) {
           if (i === 1) id = "addNewRecordButton";
           if (i === 2) id = "submit";
@@ -109,7 +118,7 @@ module.exports = {
             const color = await driver
               .findElement(By.id(formIds[j]))
               .getCssValue("border-color");
-              this.checkColor(color, "Red");
+            this.checkColor(color, "Red");
           }
         }
         if (error === false) checkStep.checked(webTables.scenario3.steps[step]);
@@ -126,7 +135,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < webTables.scenario4.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/webtables");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/webtables");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1 || i === 3) {
           if (i === 1) id = "addNewRecordButton";
           if (i === 3) id = "submit";
@@ -181,7 +193,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < webTables.scenario5.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/webtables");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/webtables");
+          await driver.manage().window().fullscreen();
+        }
         if (i % 2 === 1) {
           if (i === 1) id = "Z";
           if (i === 3) id = Key.BACK_SPACE + "Kierra";
@@ -224,12 +239,15 @@ module.exports = {
       }
     }
 
-    //Scenario 5
+    //Scenario 6
     checkStep.starScenario(webTables.scenario6.title);
     step = 0;
     for (let i = 0; i < webTables.scenario6.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/webtables");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/webtables");
+          await driver.manage().window().fullscreen();
+        }
         if (i % 2 === 1) {
           if (i === 1 || i === 3)
             path =
@@ -294,7 +312,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < webTables.scenario7.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/webtables");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/webtables");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1 || i === 3 || i === 5 || (i > 8 && i % 2 === 1)) {
           if (i === 1 || (i > 8 && i % 2 === 1)) {
             if (i === 1) option = 1;

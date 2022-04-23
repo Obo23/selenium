@@ -12,7 +12,10 @@ module.exports = {
     checkStep.starScenario(uploadAndDownload.scenario1.title);
     for (let i = 0; i < uploadAndDownload.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(
@@ -42,7 +45,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < uploadAndDownload.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/upload-download");
+        if (i === 0) {
+        await driver.get("https://demoqa.com/upload-download");
+        await driver.manage().window().fullscreen();
+      }
         if (i === 1) await driver.findElement(By.id("downloadButton")).click();
         if (i === 2) {
           error = true;

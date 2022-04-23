@@ -11,7 +11,10 @@ module.exports = {
     checkStep.starScenario(radioButton.scenario1.title);
     for (let i = 0; i < radioButton.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(
@@ -41,7 +44,10 @@ module.exports = {
     checkStep.starScenario(radioButton.scenario2.title);
     for (let i = 0; i < radioButton.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/radio-button");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/radio-button");
+          await driver.manage().window().fullscreen();
+        }
         if (i % 2 === 1) {
           if (i === 1)
             path = '//*[@id="app"]/div/div/div[2]/div[2]/div[2]/div[2]';

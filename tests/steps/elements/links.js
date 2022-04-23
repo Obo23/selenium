@@ -4,7 +4,7 @@ module.exports = {
     let driver = new Builder().forBrowser("chrome").build();
     const links = require("../../testCases/elements/links.json");
     const checkStep = require("../../functions/checkStep");
-    const { delay } = require("../../functions/general");
+    const general = require("../../functions/general");
     let step = 0,
       error = false;
 
@@ -12,7 +12,10 @@ module.exports = {
     checkStep.starScenario(links.scenario1.title);
     for (let i = 0; i < links.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(
@@ -41,7 +44,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < links.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/links");
+        if (i === 0) {
+        await driver.get("https://demoqa.com/links");
+        await driver.manage().window().fullscreen();
+      }
         if (i % 2 === 1) {
           if (i === 1) link = "simpleLink";
           if (i === 3) link = "dynamicLink";
@@ -64,6 +70,7 @@ module.exports = {
           }
           await driver.close();
           await driver.switchTo().window(window[0]);
+          await driver.manage().window().fullscreen();
         }
         //Search in the source code
         if (i % 2 === 0 && i > 5) {
@@ -74,7 +81,7 @@ module.exports = {
           if (i === 14) linkStatus = 401;
           if (i === 16) linkStatus = 403;
           if (i === 18) linkStatus = 404;
-          await delay(500);
+          await general.delay(500);
           test = await (
             await driver.getPageSource()
           ).search("<b>" + linkStatus + "</b>");

@@ -4,7 +4,7 @@ module.exports = {
     let driver = new Builder().forBrowser("chrome").build();
     const dynamicProperties = require("../../testCases/elements/dynamicProperties.json");
     const checkStep = require("../../functions/checkStep");
-    const { delay } = require("../../functions/general");
+    const general = require("../../functions/general");
     let step = 0,
       error = false;
 
@@ -12,7 +12,10 @@ module.exports = {
     checkStep.starScenario(dynamicProperties.scenario1.title);
     for (let i = 0; i < dynamicProperties.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(
@@ -42,7 +45,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < dynamicProperties.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/dynamic-properties");
+        if (i === 0) {
+        await driver.get("https://demoqa.com/dynamic-properties");
+        await driver.manage().window().fullscreen();
+      }
         if (i === 1) {
           const statusButton = await driver
             .findElement(By.id("enableAfter"))
@@ -63,7 +69,7 @@ module.exports = {
             checkStep.error(dynamicProperties.scenario2.steps[step]);
           }
         }
-        if (i === 3) await delay(5000);
+        if (i === 3) await general.delay(5000);
         if (i === 4 || i === 6) {
           if (i === 4) buttonId = "enableAfter";
           if (i === 6) buttonId = "visibleAfter";

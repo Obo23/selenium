@@ -11,7 +11,10 @@ module.exports = {
     checkStep.starScenario(buttons.scenario1.title);
     for (let i = 0; i < buttons.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(
@@ -40,7 +43,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < buttons.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/buttons");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/buttons");
+          await driver.manage().window().fullscreen();
+        }
         if (i % 2 === 1) {
           if (i === 1) buttonId = "doubleClickBtn";
           if (i === 3) buttonId = "rightClickBtn";

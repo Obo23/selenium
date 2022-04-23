@@ -4,6 +4,7 @@ module.exports = {
     let driver = new Builder().forBrowser("chrome").build();
     const checkBox = require("../../testCases/elements/checkBox.json");
     const checkStep = require("../../functions/checkStep");
+    const general = require("../../functions/general");
     let step = 0,
       error = false;
 
@@ -11,7 +12,10 @@ module.exports = {
     checkStep.starScenario(checkBox.scenario1.title);
     for (let i = 0; i < checkBox.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(
@@ -40,7 +44,10 @@ module.exports = {
     checkStep.starScenario(checkBox.scenario2.title);
     for (let i = 0; i < checkBox.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/checkbox");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/checkbox");
+          await driver.manage().window().fullscreen();
+        }
         if (i % 2 === 1) {
           if (i === 1)
             paths = [
@@ -117,16 +124,20 @@ module.exports = {
               '//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/ol/li[4]/span/label/span[3]',
               '//*[@id="tree-node"]/ol/li/ol/li[3]/span/label',
             ];
-          if (i === 31)
+          if (i === 31){
+            await general.delay(500);
             paths = [
               '//*[@id="tree-node"]/ol/li/ol/li[3]/span/label',
               '//*[@id="tree-node"]/ol/li/ol/li[3]/ol/li[1]/span/label/span[3]',
             ];
-          if (i === 33)
+          }
+          if (i === 33){
+            await general.delay(500);
             paths = [
               '//*[@id="tree-node"]/ol/li/ol/li[3]/ol/li[1]/span/label/span[3]',
               '//*[@id="tree-node"]/ol/li/ol/li[3]/ol/li[2]/span/label/span[3]',
             ];
+          }
           for (let j = 0; j < paths.length; j++) {
             await driver.findElement(By.xpath(paths[j])).click();
           }
@@ -211,7 +222,10 @@ module.exports = {
     checkStep.starScenario(checkBox.scenario3.title);
     for (let i = 0; i < checkBox.scenario3.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/checkbox");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/checkbox");
+          await driver.manage().window().fullscreen();
+        }
         if (i % 2 === 1) {
           if (i === 1) path = '//*[@id="tree-node"]/ol/li/span/button';
           if (i === 3) path = '//*[@id="tree-node"]/ol/li/ol/li[1]/span/button';
@@ -278,7 +292,10 @@ module.exports = {
     ];
     for (let i = 0; i < checkBox.scenario4.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/checkbox");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/checkbox");
+          await driver.manage().window().fullscreen();
+        }
         if (i % 2 === 1) {
           if (i === 1) path = '//*[@id="tree-node"]/div/button[1]';
           if (i === 3) path = '//*[@id="tree-node"]/div/button[2]';

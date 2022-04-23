@@ -5,13 +5,16 @@ module.exports = {
     const textBox = require("../../testCases/elements/textBox.json");
     const checkStep = require("../../functions/checkStep");
     let step = 0,
-      error = false;
-
+      error = false; 
+    
     //Scenario 1
     checkStep.starScenario(textBox.scenario1.title);
     for (let i = 0; i < textBox.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(
@@ -40,7 +43,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < textBox.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/text-box");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/text-box");
+          await driver.manage().window().fullscreen();
+        }
         if (i < 5 && i != 0) {
           if (i === 1) {
             id = "userName";
@@ -75,7 +81,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < textBox.scenario3.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/text-box");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/text-box");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1) await driver.findElement(By.id("submit")).click();
         checkStep.checked(textBox.scenario3.steps[step]);
         step++;
@@ -90,7 +99,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < textBox.scenario4.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/text-box");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/text-box");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver.findElement(By.id("userEmail")).sendKeys("abc");
         if (i === 2) await driver.findElement(By.id("submit")).click();

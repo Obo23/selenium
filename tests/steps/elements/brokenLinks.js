@@ -4,6 +4,7 @@ module.exports = {
     let driver = new Builder().forBrowser("chrome").build();
     const brokenLinks = require("../../testCases/elements/brokenLinks.json");
     const checkStep = require("../../functions/checkStep");
+    const general = require("../../functions/general");
     let step = 0,
       error = false;
 
@@ -11,7 +12,10 @@ module.exports = {
     checkStep.starScenario(brokenLinks.scenario1.title);
     for (let i = 0; i < brokenLinks.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(
@@ -41,7 +45,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < brokenLinks.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/broken");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/broken");
+          await driver.manage().window().fullscreen();
+        }
         if (i > 0) {
           if (i === 1)
             path = '//*[@id="app"]/div/div/div[2]/div[2]/div[2]/img[1]';
@@ -76,11 +83,18 @@ module.exports = {
     step = 0;
     for (let i = 0; i < brokenLinks.scenario3.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/broken");
-        if (i === 1) path = '//*[@id="app"]/div/div/div[2]/div[2]/div[2]/a[1]';
+        if (i === 0) {
+          await driver.get("https://demoqa.com/broken");
+          await driver.manage().window().fullscreen();
+        }
+        if (i === 1) {
+          await general.delay(500);
+          path = '//*[@id="app"]/div/div/div[2]/div[2]/div[2]/a[1]';
+        }
         if (i === 4) path = '//*[@id="app"]/div/div/div[2]/div[2]/div[2]/a[2]';
         if (i === 1 || i === 4)
           await driver.findElement(By.xpath(path)).click();
+          await driver.manage().window().fullscreen();
         if (i === 2 || i === 5) {
           test = await (await driver.getPageSource()).search(500);
           if (i === 2 && test !== -1)

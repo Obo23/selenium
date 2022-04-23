@@ -11,7 +11,7 @@
   "scenario2": {
     "title": "Escenario: Probar botones de la sección",
     "steps": [
-      "Acceder a Browser Windows de Alerts",
+      "Acceder a Browser Windows",
       "Hacer clic en New Tab",
       "Comprobar que aparece una nueva pestaña",
       "Hacer clic en New Window",

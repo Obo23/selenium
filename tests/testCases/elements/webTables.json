@@ -43,7 +43,7 @@
     "title": "Escenario: Comprobar búsqueda de usuarios",
     "steps": [
       "Acceder a Web Tablets",
-      "Escribir Z en el bucador",
+      "Escribir Z en el buscador",
       "Comprobar que no aparecen resultados",
       "Escribir Kierra en el buscador",
       "Comprobar el resultado"
