@@ -11,7 +11,10 @@ module.exports = {
     checkStep.starScenario(selectable.scenario1.title);
     for (let i = 0; i < selectable.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[5]'))
@@ -46,7 +49,10 @@ module.exports = {
         element2 = '//*[@id="verticalListContainer"]/li[2]';
         element3 = '//*[@id="verticalListContainer"]/li[3]';
         element4 = '//*[@id="verticalListContainer"]/li[4]';
-        if (i === 0) await driver.get("https://demoqa.com/selectable");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/selectable");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1 || i === 2 || i === 9 || i === 10) element = element1;
         if (i === 3 || i === 4 || i === 11 || i === 12) element = element2;
         if (i === 5 || i === 6 || i === 13 || i === 14) element = element3;
@@ -84,8 +90,11 @@ module.exports = {
         element8 = '//*[@id="row3"]/li[2]';
         element9 = '//*[@id="row3"]/li[3]';
 
-        if (i === 0) await driver.get("https://demoqa.com/selectable");
-        if (i === 1) await driver.findElement(By.id('demo-tab-grid')).click();
+        if (i === 0) {
+          await driver.get("https://demoqa.com/selectable");
+          await driver.manage().window().fullscreen();
+        }
+        if (i === 1) await driver.findElement(By.id("demo-tab-grid")).click();
         if (i === 2 || i === 3 || i === 20 || i === 21) element = element1;
         if (i === 4 || i === 5 || i === 22 || i === 23) element = element2;
         if (i === 6 || i === 7 || i === 24 || i === 25) element = element3;
@@ -95,7 +104,8 @@ module.exports = {
         if (i === 14 || i === 15 || i === 32 || i === 33) element = element7;
         if (i === 16 || i === 17 || i === 34 || i === 35) element = element8;
         if (i === 18 || i === 19 || i === 36 || i === 37) element = element9;
-        if (i % 2 === 0 && i > 0) await driver.findElement(By.xpath(element)).click();
+        if (i % 2 === 0 && i > 0)
+          await driver.findElement(By.xpath(element)).click();
         if (i % 2 === 1 && i > 1) {
           if (i < 20) expectedColor = "rgba(255, 255, 255, 1)";
           if (i > 19) expectedColor = "rgba(73, 80, 87, 1)";

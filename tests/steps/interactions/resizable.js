@@ -11,7 +11,10 @@ module.exports = {
     checkStep.starScenario(resizable.scenario1.title);
     for (let i = 0; i < resizable.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[5]'))
@@ -42,7 +45,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < resizable.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/resizable");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/resizable");
+          await driver.manage().window().fullscreen();
+        }
         if (i % 2 === 1) {
           if (i === 1)
             (xValue = -50),

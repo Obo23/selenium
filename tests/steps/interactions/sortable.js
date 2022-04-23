@@ -11,7 +11,10 @@ module.exports = {
     checkStep.starScenario(sortable.scenario1.title);
     for (let i = 0; i < sortable.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[5]'))
@@ -60,7 +63,10 @@ module.exports = {
         position6 = await driver.findElement(
           By.xpath('//*[@id="demo-tabpane-list"]/div/div[6]')
         );
-        if (i === 0) await driver.get("https://demoqa.com/sortable");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/sortable");
+          await driver.manage().window().fullscreen();
+        }
         if (i % 2 === 1) {
           const actions = driver.actions({ async: true });
           if (i === 1)
@@ -128,7 +134,10 @@ module.exports = {
         position9 = await driver.findElement(
           By.xpath('//*[@id="demo-tabpane-grid"]/div/div/div[9]')
         );
-        if (i === 0) await driver.get("https://demoqa.com/sortable");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/sortable");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1) await driver.findElement(By.id("demo-tab-grid")).click();
         if (i % 2 === 0 && i > 0) {
           const actions = driver.actions({ async: true });
