@@ -1,0 +1,66 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Dragabble de Interactions",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Interactions",
+      "Hacer clic en Dragabble",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar las funciones de la pestaña Simple",
+    "steps": [
+      "Acceder a Dragabble",
+      "Comprobar la posición del elemento 'Drag me'",
+      "Arrastrar el elemento 'Drag me' a otro punto de la pantalla",
+      "Comprobar que la posición del elemento 'Drag me' ha cambiado"
+    ]
+  },
+  "scenario3": {
+    "title": "Escenario: Comprobar las funciones de la pestaña Axis Restricted",
+    "steps": [
+      "Acceder a Dragabble",
+      "Hacer clic en Axis Restricted",
+      "Comprobar la posición del elemento 'Only X'",
+      "Intentar mover el elemento 'Only X' en ambos ejes",
+      "Comprobar la posición del elemento 'Only X' ha cambia en el eje X y sigue igual en el Y",
+      "Comprobar la posición del elemento 'Only Y'",
+      "Intentar mover el elemento 'Only Y' en ambos ejes",
+      "Comprobar la posición del elemento 'Only Y' ha cambia en el eje Y y sigue igual en el X"
+    ]
+  },
+  "scenario4": {
+    "title": "Escenario: Comprobar las funciones de la pestaña Container Restricted",
+    "steps": [
+      "Acceder a Dragabble",
+      "Hacer clic en Container Restricted",
+      "Comprobar que el elemento que está dentro de la caja, está en la posición mínima de ambos ejes",
+      "Mover el elemento que está dentro de la caja a los límites de la caja en ambos ejes",
+      "Comprobar que el elemento se ha movido y está en los límites de la caja",
+      "Mover el elemento que está dentro de la caja fuera de la caja",
+      "Comprobar que no es posible y que la posición del elemento no ha cambiado",
+      "Comprobar que el elemento que está dentro del padre, está en la posición mínima de ambos ejes",
+      "Mover el elemento que está dentro del padre a los límites de la caja en ambos ejes",
+      "Comprobar que el elemento se ha movido y está en los límites de la caja",
+      "Mover el elemento que está dentro del padre fuera de la caja",
+      "Comprobar que no es posible y que la posición del elemento no ha cambiado"
+    ]
+  },
+  "scenario5": {
+    "title": "Escenario: Comprobar las funciones de la pestaña Cursor Style",
+    "steps": [
+      "Acceder a Dragabble",
+      "Hacer clic en Cursor Style",
+      "Comprobar la posición del primer elemento",
+      "Mover el primer elemento en ambos ejes",
+      "Comprobar que el cursor se queda en el centro al arrastrar",
+      "Comprobar la posición del segundo elemento",
+      "Mover el segundo elemento en ambos ejes",
+      "Comprobar que el cursor se queda en la esquina superior izquierda",
+      "Comprobar la posición del tercer elemento",
+      "Mover el tercer elemento en ambos ejes",
+      "Comprobar que el cursor se queda en la parte inferior central"
+    ]
+  }
+}

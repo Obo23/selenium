@@ -1,0 +1,76 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Selectable de Interactions",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Interactions",
+      "Hacer clic en Selectable",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar la selección de elementos en la pestaña List",
+    "steps": [
+      "Acceder a Selectable",
+      "Seleccionar el primer elemento",
+      "Comprobar la selección",
+      "Seleccionar el segundo elemento",
+      "Comprobar la selección",
+      "Seleccionar el tercer elemento",
+      "Comprobar la selección",
+      "Seleccionar el cuarto elemento",
+      "Comprobar la selección",
+      "Quitar la selección del primer elemento",
+      "Comprobar que no está seleccionado",
+      "Quitar la selección del segundo elemento",
+      "Comprobar que no está seleccionado",
+      "Quitar la selección del tercer elemento",
+      "Comprobar que no está seleccionado",
+      "Quitar la selección del cuarto elemento",
+      "Comprobar que no está seleccionado"
+    ]
+  },
+  "scenario3": {
+    "title": "Escenario: Comprobar la selección de elementos en la pestaña Grid",
+    "steps": [
+      "Acceder a Selectable",
+      "Hacer clic en Grid",
+      "Seleccionar el primer elemento",
+      "Comprobar la selección",
+      "Seleccionar el segundo elemento",
+      "Comprobar la selección",
+      "Seleccionar el tercer elemento",
+      "Comprobar la selección",
+      "Seleccionar el cuarto elemento",
+      "Comprobar la selección",
+      "Seleccionar el quinto elemento",
+      "Comprobar la selección",
+      "Seleccionar el sexto elemento",
+      "Comprobar la selección",
+      "Seleccionar el séptimo elemento",
+      "Comprobar la selección",
+      "Seleccionar el octavo elemento",
+      "Comprobar la selección",
+      "Seleccionar el noveno elemento",
+      "Comprobar la selección",
+      "Quitar la selección del primer elemento",
+      "Comprobar que no está seleccionado",
+      "Quitar la selección del segundo elemento",
+      "Comprobar que no está seleccionado",
+      "Quitar la selección del tercer elemento",
+      "Comprobar que no está seleccionado",
+      "Quitar la selección del cuarto elemento",
+      "Comprobar que no está seleccionado",
+      "Quitar la selección del quinto elemento",
+      "Comprobar que no está seleccionado",
+      "Quitar la selección del sexto elemento",
+      "Comprobar que no está seleccionado",
+      "Quitar la selección del séptimo elemento",
+      "Comprobar que no está seleccionado",
+      "Quitar la selección del octavo elemento",
+      "Comprobar que no está seleccionado",
+      "Quitar la selección del noveno elemento",
+      "Comprobar que no está seleccionado"
+    ]
+  }
+}

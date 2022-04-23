@@ -1,0 +1,54 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Sortable de Interactions",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Interactions",
+      "Hacer clic en Sortable",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar el movimiento de elementos en la pestaña List",
+    "steps": [
+      "Acceder a Sortable",
+      "Mover el elemento One a la sexta posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento Three a la quinta posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento Five a la cuarta posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento Five a la tercera posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento Three a la segunda posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento One a la primera posición",
+      "Comprobar que se ha movido"
+    ]
+  },
+  "scenario3": {
+    "title": "Escenario: Comprobar el movimiento de elementos en la pestaña Grid",
+    "steps": [
+      "Acceder a Sortable",
+      "Hacer clic en Grid",
+      "Mover el elemento One a la novena posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento Three a la octaba posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento Five a la séptima posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento Seven a la sexta posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento Nine a la quinta posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento Seven a la cuarta posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento Five a la tercera posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento Three a la segunda posición",
+      "Comprobar que se ha movido",
+      "Mover el elemento One a la primera posición",
+      "Comprobar que se ha movido"
+    ]
+  }
+}

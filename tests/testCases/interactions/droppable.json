@@ -1,0 +1,76 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Droppable de Interactions",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Interactions",
+      "Hacer clic en Droppable",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar las funciones de la pestaña Simple",
+    "steps": [
+      "Acceder a Droppable",
+      "Comprobar que el estado del elemento drop es blanco y aparece la palabra Drop here",
+      "Arrastrar el elemento Drag al elemento Drop",
+      "Comprobar que el estado del elemento drop es azul y aparece la palabra Drooped!"
+    ]
+  },
+  "scenario3": {
+    "title": "Escenario: Comprobar las funciones de la pestaña Accept",
+    "steps": [
+      "Acceder a Droppable",
+      "Hacer clic en Accept",
+      "Comprobar que el estado del elemento drop es blanco y aparece la palabra Drop here",
+      "Arrastrar el elemento Not Acceptable al elemento Drop",
+      "Comprobar que el estado del elemento drop es blanco y aparece la palabra Drop here",
+      "Arrastrar el elemento Acceptable",
+      "Comprobar que el estado del elemento drop es azul y aparece la palabra Drooped!"
+    ]
+  },
+  "scenario4": {
+    "title": "Escenario: Comprobar las funciones de la pestaña Prevent Propogation",
+    "steps": [
+      "Acceder a Droppable",
+      "Hacer clic en Prevent Propogation",
+      "Comprobar que el estado de los cuatro dropper es blanco y no aparece la palabra Dropped!",
+      "Arrastrar el elemento 'Drag me' al primer Outer droppable",
+      "Comprobar que el primer Outer cambia a color azul y aparece la palabra Drooped!, mientras el resto permanece como en el paso 3",
+      "Arrastrar el elemento 'Drag me' al elemento Inner droppable (not greedy)",
+      "Comprobar que los dos primeros elementos están en color azul y aparece la palabra Drooped!, mientras el resto permanece como en el paso 3",
+      "Arrastrar el elemento 'Drag me' al segundo Outer droppable", 
+      "Comprobar que los tres primeros elementos están en color azul y aparece la palabra Drooped!, mientras el último permanece como en el paso 3",
+      "Arrastrar el elemento 'Drag me' al elemento Inner droppable (greedy)",
+      "Comprobar que el estado de los cuatro dropper es azul y aparece la palabra Drooped!",
+      "Recargar la página",
+      "Hacer clic en Prevent Propogation",
+      "Arrastrar el elemento 'Drag me' al elemento Inner droppable (not greedy)",
+      "Comprobar que los dos primeros elementos están en color azul y aparece la palabra Drooped!, mientras el resto permanece como en el paso 3",
+      "Arrastrar el elemento 'Drag me' al elemento Inner droppable (greedy)",
+      "Comprobar que el segundo Outer droppable está como en el paso 3 y el resto de elementos están en azul y aparece la palabra Drooped! en ellos"
+    ]
+  },
+  "scenario5": {
+    "title": "Escenario: Comprobar las funciones de la pestaña Revert Draggable",
+    "steps": [
+      "Acceder a Droppable",
+      "Hacer clic en Revert Draggable",
+      "Comprobar que el estado del elemento drop es blanco y aparece la palabra Drop here",
+      "Arrastrar el elemento Will Revert a un punto fuera del elemento drop",
+      "Comprobar que su posición ha cambiado",
+      "Arrastrar el elemento Will Revert al elemento Drop",
+      "Comprobar que el estado del elemento drop es azul y aparece la palabra Drooped! y el elemento Will Revert volvió a la posición anterior",
+      "Arrastrar el elemento Will Revert a un punto fuera del elemento drop",
+      "Comprobar que su posición ha cambiado",
+      "Recargar la página",
+      "Hacer clic en Revert Draggable",
+      "Arrastrar el elemento Not Revert a un punto fuera del elemento drop",
+      "Comprobar que su posición no ha cambiado",
+      "Arrastrar el elemento Not Revert al elemento Drop",
+      "Comprobar que el estado del elemento drop es azul y aparece la palabra Drooped! y el elemento Not Revert ha cambiado de posición",
+      "Arrastrar el elemento Not Revert a un punto fuera del elemento drop",
+      "Comprobar que su posición no ha cambiado"
+    ]
+  }
+}

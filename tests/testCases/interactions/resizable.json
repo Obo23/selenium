@@ -1,0 +1,25 @@
+{
+  "scenario1": {
+    "title": "Escenario: Acceder a la sección Resizable de Interactions",
+    "steps": [
+      "Acceder a la homepage",
+      "Hacer clic en Interactions",
+      "Hacer clic en Resizable",
+      "Comprobar url"
+    ]
+  },
+  "scenario2": {
+    "title": "Escenario: Comprobar el movimiento de elementos en la pestaña List",
+    "steps": [
+      "Acceder a Resizable",
+      "Ajustar el tamaño de la primera ventana a su mínimo 150x150",
+      "Comprobar el tamaño",
+      "Ajustar el tamaño de la primera ventana a su máximo 500x300",
+      "Comprobar el tamaño",
+      "Ajustar el tamaño de la segunda ventana a su mínimo 20x20",
+      "Comprobar el tamaño",
+      "Ajustar el tamaño de la segunda ventana a 500x300",
+      "Comprobar el tamaño"
+    ]
+  }
+}
