@@ -5,8 +5,8 @@ module.exports = {
     const textBox = require("../../testCases/elements/textBox.json");
     const checkStep = require("../../functions/checkStep");
     let step = 0,
-      error = false; 
-    
+      error = false;
+
     //Scenario 1
     checkStep.starScenario(textBox.scenario1.title);
     for (let i = 0; i < textBox.scenario1.steps.length; i++) {

@@ -124,14 +124,14 @@ module.exports = {
               '//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/ol/li[4]/span/label/span[3]',
               '//*[@id="tree-node"]/ol/li/ol/li[3]/span/label',
             ];
-          if (i === 31){
+          if (i === 31) {
             await general.delay(500);
             paths = [
               '//*[@id="tree-node"]/ol/li/ol/li[3]/span/label',
               '//*[@id="tree-node"]/ol/li/ol/li[3]/ol/li[1]/span/label/span[3]',
             ];
           }
-          if (i === 33){
+          if (i === 33) {
             await general.delay(500);
             paths = [
               '//*[@id="tree-node"]/ol/li/ol/li[3]/ol/li[1]/span/label/span[3]',

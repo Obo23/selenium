@@ -46,9 +46,9 @@ module.exports = {
     for (let i = 0; i < uploadAndDownload.scenario2.steps.length; i++) {
       try {
         if (i === 0) {
-        await driver.get("https://demoqa.com/upload-download");
-        await driver.manage().window().fullscreen();
-      }
+          await driver.get("https://demoqa.com/upload-download");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1) await driver.findElement(By.id("downloadButton")).click();
         if (i === 2) {
           error = true;

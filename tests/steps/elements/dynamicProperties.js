@@ -46,9 +46,9 @@ module.exports = {
     for (let i = 0; i < dynamicProperties.scenario2.steps.length; i++) {
       try {
         if (i === 0) {
-        await driver.get("https://demoqa.com/dynamic-properties");
-        await driver.manage().window().fullscreen();
-      }
+          await driver.get("https://demoqa.com/dynamic-properties");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1) {
           const statusButton = await driver
             .findElement(By.id("enableAfter"))

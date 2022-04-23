@@ -45,9 +45,9 @@ module.exports = {
     for (let i = 0; i < links.scenario2.steps.length; i++) {
       try {
         if (i === 0) {
-        await driver.get("https://demoqa.com/links");
-        await driver.manage().window().fullscreen();
-      }
+          await driver.get("https://demoqa.com/links");
+          await driver.manage().window().fullscreen();
+        }
         if (i % 2 === 1) {
           if (i === 1) link = "simpleLink";
           if (i === 3) link = "dynamicLink";

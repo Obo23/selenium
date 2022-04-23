@@ -94,7 +94,7 @@ module.exports = {
         if (i === 4) path = '//*[@id="app"]/div/div/div[2]/div[2]/div[2]/a[2]';
         if (i === 1 || i === 4)
           await driver.findElement(By.xpath(path)).click();
-          await driver.manage().window().fullscreen();
+        await driver.manage().window().fullscreen();
         if (i === 2 || i === 5) {
           test = await (await driver.getPageSource()).search(500);
           if (i === 2 && test !== -1)
