@@ -4,7 +4,6 @@ module.exports = {
     let driver = new Builder().forBrowser("chrome").build();
     const frames = require("../../testCases/alertsFrameWindows/frames.json");
     const checkStep = require("../../functions/checkStep");
-
     let step = 0,
       error = false;
 
@@ -12,7 +11,10 @@ module.exports = {
     checkStep.starScenario(frames.scenario1.title);
     for (let i = 0; i < frames.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[3]'))
@@ -46,7 +48,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < frames.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/frames");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/frames");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1 || i === 3) {
           if (i === 1) frameId = "frame1Wrapper";
           if (i === 3) frameId = "frame2Wrapper";

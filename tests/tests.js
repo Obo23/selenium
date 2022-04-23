@@ -29,44 +29,44 @@ const droppable = require("./steps/interactions/droppable.js");
 const dragabble = require("./steps/interactions/dragabble.js");
 
 async function tests() {
-  //Elements
-  await textBox.test();
-  await checkBox.test();
-  await radioButton.test();
-  await webTables.test();
-  await buttons.test();
-  await links.test();
-  await brokenLinks.test();
-  await uploadAndDownload.test();
-  await dynamicProperties.test();
+  // //Elements
+  // await textBox.test();
+  // await checkBox.test();
+  // await radioButton.test();
+  // await webTables.test();
+  // await buttons.test();
+  // await links.test();
+  // await brokenLinks.test();
+  // await uploadAndDownload.test();
+  // await dynamicProperties.test();
 
-  //Forms
-  await practiceForm.test();
+  // //Forms
+  // await practiceForm.test();
 
   //Alert, Frame & Windows
-  await browserWindows.test();
+  // await browserWindows.test();
   await alerts.test();
-  await frames.test();
-  await nestedFrames.test();
-  await modalDialogs.test();
+  // await frames.test();
+  // await nestedFrames.test();
+  // await modalDialogs.test();
 
-  //Widgets
-  await accordian.test();
-  await autoComplete.test();
-  await datePicker.test();
-  await slider.test();
-  await progressBar.test();
-  await tabs.test();
-  await toolTips.test();
-  await menu.test();
-  await selectMenu.test();
+  // //Widgets
+  // await accordian.test();
+  // await autoComplete.test();
+  // await datePicker.test();
+  // await slider.test();
+  // await progressBar.test();
+  // await tabs.test();
+  // await toolTips.test();
+  // await menu.test();
+  // await selectMenu.test();
 
-  //Interactions
-  await sortable.test();
-  await selectable.test();
-  await resizable.test();
-  await droppable.test();
-  await dragabble.test();
+  // //Interactions
+  // await sortable.test();
+  // await selectable.test();
+  // await resizable.test();
+  // await droppable.test();
+  // await dragabble.test();
 }
 
 tests();

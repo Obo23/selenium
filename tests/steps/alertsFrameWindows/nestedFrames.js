@@ -11,7 +11,10 @@ module.exports = {
     checkStep.starScenario(nestedFrames.scenario1.title);
     for (let i = 0; i < nestedFrames.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[3]'))
@@ -46,7 +49,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < nestedFrames.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/nestedframes");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/nestedframes");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1 || i === 3) {
           if (i === 1)
             iframe = driver.findElement(By.css("#frame1Wrapper > iframe"));

@@ -4,7 +4,7 @@ module.exports = {
     let driver = new Builder().forBrowser("chrome").build();
     const alerts = require("../../testCases/alertsFrameWindows/alerts.json");
     const checkStep = require("../../functions/checkStep");
-    const { delay } = require("../../functions/general");
+    const general = require("../../functions/general");
     let step = 0,
       error = false;
 
@@ -12,7 +12,10 @@ module.exports = {
     checkStep.starScenario(alerts.scenario1.title);
     for (let i = 0; i < alerts.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[3]'))
@@ -49,7 +52,10 @@ module.exports = {
     const enteredText = "You entered Test";
     for (let i = 0; i < alerts.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/alerts");
+        if (i === 0) {
+        await driver.get("https://demoqa.com/alerts");
+        await driver.manage().window().fullscreen();
+      }
         if (i % 2 === 1) {
           if (i === 1) id = "alertButton";
           if (i === 3) id = "timerAlertButton";
@@ -58,13 +64,14 @@ module.exports = {
           await driver.findElement(By.id(id)).click();
         }
         if (i % 2 === 0 && i != 0) {
-          if (i === 4) await delay(5000);
+          if (i === 4) await general.delay(5000);
           let alert = await driver.switchTo().alert();
           if (i === 8) await alert.dismiss();
           if (i === 10) await alert.sendKeys("Test");
           if (i === 12) await alert.dismiss();
           if (i != 8 && i != 12) await alert.accept();
-          await driver.switchTo().defaultContent();
+          // await driver.switchTo().defaultContent();
+          // await driver.manage().window().fullscreen();
           if (i === 6 || i === 8 || i === 10) {
             if (i === 6 || i === 8) id = "confirmResult";
             if (i === 10) id = "promptResult";
@@ -78,6 +85,7 @@ module.exports = {
             }
           }
           await driver.switchTo().defaultContent();
+          await driver.manage().window().fullscreen();
         }
         if (error === false) checkStep.checked(alerts.scenario2.steps[step]);
         error = false;

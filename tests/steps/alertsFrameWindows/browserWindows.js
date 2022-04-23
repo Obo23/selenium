@@ -12,7 +12,10 @@ module.exports = {
     checkStep.starScenario(browserWindows.scenario1.title);
     for (let i = 0; i < browserWindows.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[3]'))
@@ -47,7 +50,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < browserWindows.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/browser-windows");
+        if (i === 0) {
+        await driver.get("https://demoqa.com/browser-windows");
+        await driver.manage().window().fullscreen();
+      }
         if (i % 2 === 1) {
           if (i === 1) id = "tabButton";
           if (i === 3) id = "windowButton";
@@ -67,6 +73,7 @@ module.exports = {
           }
           await driver.close();
           await driver.switchTo().window(window[0]);
+          await driver.manage().window().fullscreen();
         }
         if (error === false)
           checkStep.checked(browserWindows.scenario2.steps[step]);
