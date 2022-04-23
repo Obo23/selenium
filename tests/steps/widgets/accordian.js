@@ -1,19 +1,20 @@
-const general = require("../../functions/general");
-
 module.exports = {
   test: async function () {
     const { By, Key, Builder } = require("selenium-webdriver");
     let driver = new Builder().forBrowser("chrome").build();
     const accordian = require("../../testCases/widgets/accordian.json");
     const checkStep = require("../../functions/checkStep");
-
+    const general = require("../../functions/general");
     let step = 0;
 
     //Scenario 1
     checkStep.starScenario(accordian.scenario1.title);
     for (let i = 0; i < accordian.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[4]'))
@@ -46,7 +47,10 @@ module.exports = {
       deployed = "collapse show";
     for (let i = 0; i < accordian.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/accordian");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/accordian");
+          await driver.manage().window().fullscreen();
+        }
         if (i % 2 === 1) {
           if (i === 1) idElement = "section3Heading";
           if (i === 3) idElement = "section2Heading";
@@ -54,7 +58,7 @@ module.exports = {
           await driver.findElement(By.id(idElement)).click();
         }
         if (i % 2 === 0 && i != 0) {
-          await general.delay(1500);
+          await general.delay(500);
           const sectionStatus1 = await driver
             .findElement(
               By.xpath('//*[@id="accordianContainer"]/div/div[1]/div[2]')

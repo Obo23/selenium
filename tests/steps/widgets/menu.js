@@ -1,13 +1,10 @@
-const general = require("../../functions/general");
-let fs = require('fs');
-
 module.exports = {
   test: async function () {
     const { By, Key, Builder } = require("selenium-webdriver");
     let driver = new Builder().forBrowser("chrome").build();
     const menu = require("../../testCases/widgets/menu.json");
     const checkStep = require("../../functions/checkStep");
-    await driver.manage().window().fullscreen();
+    let fs = require("fs");
     let step = 0;
 
     //Scenario 1
@@ -25,7 +22,7 @@ module.exports = {
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[4]'))
             .click();
-          await general.delay(1000);
+          // await general.delay(1000);
         }
         if (i === 2)
           await driver
@@ -62,23 +59,29 @@ module.exports = {
     for (let i = 0; i < menu.scenario2.steps.length; i++) {
       try {
         if (i === 0) await driver.get("https://demoqa.com/menu");
-        if (i > 0 && i < 3) checkItem = item1, itemName = "Main_Item_1";
-        if (i > 2 && i < 5) checkItem = item2, itemName = "Main_Item_2";
-        if (i > 4 && i < 7) checkItem = subItem1, itemName = "Sub_Item_1";
-        if (i > 6 && i < 9) checkItem = subItem2, itemName = "Sub_Item_2";
-        if (i > 8 && i < 11) checkItem = subSubList, itemName = "Sub_Sub_List";
-        if (i > 10 && i < 13) checkItem = subSubItem1, itemName = "Sub_Sub_Item_1";
-        if (i > 12 && i < 15) checkItem = subSubItem2, itemName = "Sub_Sub_Item_2";
-        if (i > 14 && i < 17) checkItem = item3, itemName = "Main_Item_3";
+        if (i > 0 && i < 3) (checkItem = item1), (itemName = "Main_Item_1");
+        if (i > 2 && i < 5) (checkItem = item2), (itemName = "Main_Item_2");
+        if (i > 4 && i < 7) (checkItem = subItem1), (itemName = "Sub_Item_1");
+        if (i > 6 && i < 9) (checkItem = subItem2), (itemName = "Sub_Item_2");
+        if (i > 8 && i < 11)
+          (checkItem = subSubList), (itemName = "Sub_Sub_List");
+        if (i > 10 && i < 13)
+          (checkItem = subSubItem1), (itemName = "Sub_Sub_Item_1");
+        if (i > 12 && i < 15)
+          (checkItem = subSubItem2), (itemName = "Sub_Sub_Item_2");
+        if (i > 14 && i < 17) (checkItem = item3), (itemName = "Main_Item_3");
         if (i % 2 === 1) {
           var hoverElement = driver.findElement(By.xpath(checkItem));
           const actions = driver.actions({ async: true });
           await actions.move({ origin: hoverElement }).perform();
-          await general.delay(500);
         }
         if (i % 2 === 0 && i != 0) {
           let encodedString = await driver.takeScreenshot();
-          await fs.writeFileSync(`./public/widgets/menu/menu${itemName}.png`, encodedString, "base64");
+          await fs.writeFileSync(
+            `./public/widgets/menu/menu${itemName}.png`,
+            encodedString,
+            "base64"
+          );
         }
         checkStep.checked(menu.scenario2.steps[step]);
         step++;

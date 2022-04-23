@@ -13,7 +13,13 @@ module.exports = {
     checkStep.starScenario(tabs.scenario1.title);
     for (let i = 0; i < tabs.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver
+            .manage()
+            .window()
+            .setRect({ height: 1280, width: 1920, x: 1930, y: 1450 });
+        }
         if (i === 1)
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[4]'))
@@ -44,7 +50,13 @@ module.exports = {
     step = 0;
     for (let i = 0; i < tabs.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/tabs");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/tabs");
+          await driver
+            .manage()
+            .window()
+            .setRect({ height: 1280, width: 1920, x: 1930, y: 1450 });
+        }
         if (i === 1 || i === 2) tabId = "demo-tab-use";
         if (i === 3 || i === 4) tabId = "demo-tab-origin";
         if (i === 5 || i === 6) tabId = "demo-tab-what";

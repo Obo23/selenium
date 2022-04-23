@@ -1,19 +1,20 @@
-const general = require("../../functions/general");
-
 module.exports = {
   test: async function () {
     const { By, Key, Builder } = require("selenium-webdriver");
     let driver = new Builder().forBrowser("chrome").build();
     const datePicker = require("../../testCases/widgets/datePicker.json");
     const checkStep = require("../../functions/checkStep");
-
+    const general = require("../../functions/general");
     let step = 0;
 
     //Scenario 1
     checkStep.starScenario(datePicker.scenario1.title);
     for (let i = 0; i < datePicker.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[4]'))
@@ -45,7 +46,10 @@ module.exports = {
     const date = [1, 6, 12, 2000]; //12 31 2000
     for (let i = 0; i < datePicker.scenario2.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/date-picker");
+        if (i === 0) {
+        await driver.get("https://demoqa.com/date-picker");
+        await driver.manage().window().fullscreen();
+      }
         if (i === 1) {
           await driver.findElement(By.id("datePickerMonthYearInput")).click();
           await driver
@@ -93,7 +97,10 @@ module.exports = {
     step = 0;
     for (let i = 0; i < datePicker.scenario3.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/date-picker");
+        if (i === 0) {
+        await driver.get("https://demoqa.com/date-picker");
+        await driver.manage().window().fullscreen();
+      }
         if (i === 1) {
           await driver.findElement(By.id("dateAndTimePickerInput")).click();
           await driver
