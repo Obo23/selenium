@@ -4,7 +4,7 @@ module.exports = {
     let driver = new Builder().forBrowser("chrome").build();
     const practiceForm = require("../../testCases/forms/practiceForm.json");
     const checkStep = require("../../functions/checkStep");
-    const { delay } = require("../../functions/general");
+    const general = require("../../functions/general");
     require("dotenv").config({ path: ".env" });
 
     user = [
@@ -27,7 +27,10 @@ module.exports = {
     checkStep.starScenario(practiceForm.scenario1.title);
     for (let i = 0; i < practiceForm.scenario1.steps.length; i++) {
       try {
-        if (i === 0) await driver.get("https://demoqa.com/");
+        if (i === 0) {
+          await driver.get("https://demoqa.com/");
+          await driver.manage().window().fullscreen();
+        }
         if (i === 1)
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[2]'))
@@ -63,11 +66,11 @@ module.exports = {
     for (let i = 0; i < practiceForm.scenario2.steps.length; i++) {
       try {
         if (i === 0) {
+          await driver.get("https://demoqa.com/automation-practice-form");
           await driver
             .manage()
             .window()
-            .setRect({ height: 1270, width: 945, x: 1930, y: 1450 });
-          await driver.get("https://demoqa.com/automation-practice-form");
+            .setRect({ height: 1280, width: 1920, x: 1930, y: 1450 });
         }
         if ((i > 0 && i < 4) || i === 5 || i === 9 || i === 10) {
           if (i === 1) (fieldId = "firstName"), (text = "Name");
@@ -165,11 +168,11 @@ module.exports = {
     for (let i = 0; i < practiceForm.scenario3.steps.length; i++) {
       try {
         if (i === 0) {
+          await driver.get("https://demoqa.com/automation-practice-form");
           await driver
             .manage()
             .window()
-            .setRect({ height: 1270, width: 945, x: 1930, y: 1450 });
-          await driver.get("https://demoqa.com/automation-practice-form");
+            .setRect({ height: 1280, width: 1920, x: 1930, y: 1450 });
         }
         if (i === 1 || i === 7)
           await driver.findElement(By.id("submit")).click();
@@ -182,7 +185,7 @@ module.exports = {
             '//*[@id="genterWrapper"]/div[2]/div[2]/label',
             '//*[@id="genterWrapper"]/div[2]/div[3]/label',
           ];
-          await delay(500);
+          await general.delay(500);
           for (j = 0; j < xpathArray.length; j++) {
             if (j < 3)
               borderColor = await driver
@@ -239,14 +242,14 @@ module.exports = {
     for (let i = 0; i < practiceForm.scenario4.steps.length; i++) {
       try {
         if (i === 0) {
+          await driver.get("https://demoqa.com/automation-practice-form");
           await driver
             .manage()
             .window()
-            .setRect({ height: 1270, width: 945, x: 1930, y: 1450 });
-          await driver.get("https://demoqa.com/automation-practice-form");
+            .setRect({ height: 1280, width: 1920, x: 1930, y: 1450 });
         }
         if ((i > 0 && i < 4) || (i > 7 && i < 11) || (i > 14 && i < 18)) {
-          if (i === 8 || i === 15) await delay(500);
+          if (i === 8 || i === 15) await general.delay(500);
           if (i === 1 || i === 8 || i === 15)
             (fieldId = "firstName"), (text = "Name");
           if (i === 2 || i === 9 || i === 16)
@@ -310,11 +313,11 @@ module.exports = {
     for (let i = 0; i < practiceForm.scenario5.steps.length; i++) {
       try {
         if (i === 0) {
+          await driver.get("https://demoqa.com/automation-practice-form");
           await driver
             .manage()
             .window()
-            .setRect({ height: 1270, width: 945, x: 1930, y: 1450 });
-          await driver.get("https://demoqa.com/automation-practice-form");
+            .setRect({ height: 1280, width: 1920, x: 1930, y: 1450 });
         }
         if (i === 1 || i === 4 || i === 7) {
           if (i === 1) typeText = "m";
@@ -380,14 +383,14 @@ module.exports = {
     for (let i = 0; i < practiceForm.scenario6.steps.length; i++) {
       try {
         if (i === 0) {
+          await driver.get("https://demoqa.com/automation-practice-form");
           await driver
             .manage()
             .window()
-            .setRect({ height: 1270, width: 945, x: 1930, y: 1450 });
-          await driver.get("https://demoqa.com/automation-practice-form");
+            .setRect({ height: 1280, width: 1920, x: 1930, y: 1450 });
         }
         if ((i > 0 && i < 4) || (i > 9 && i < 13) || (i > 18 && i < 22)) {
-          if (i === 10 || i === 19) await delay(500);
+          if (i === 10 || i === 19) await general.delay(500);
           if (i === 1 || i === 10 || i === 19)
             (fieldId = "firstName"), (text = "Name");
           if (i === 2 || i === 11 || i === 20)
