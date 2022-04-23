@@ -12,10 +12,7 @@ module.exports = {
     checkStep.starScenario(alerts.scenario1.title);
     for (let i = 0; i < alerts.scenario1.steps.length; i++) {
       try {
-        if (i === 0) {
-          await driver.get("https://demoqa.com/");
-          await driver.manage().window().fullscreen();
-        }
+        if (i === 0) await driver.get("https://demoqa.com/");
         if (i === 1)
           await driver
             .findElement(By.xpath('//*[@id="app"]/div/div/div[2]/div/div[3]'))
@@ -52,10 +49,7 @@ module.exports = {
     const enteredText = "You entered Test";
     for (let i = 0; i < alerts.scenario2.steps.length; i++) {
       try {
-        if (i === 0) {
-        await driver.get("https://demoqa.com/alerts");
-        await driver.manage().window().fullscreen();
-      }
+        if (i === 0) await driver.get("https://demoqa.com/alerts");
         if (i % 2 === 1) {
           if (i === 1) id = "alertButton";
           if (i === 3) id = "timerAlertButton";
@@ -70,8 +64,6 @@ module.exports = {
           if (i === 10) await alert.sendKeys("Test");
           if (i === 12) await alert.dismiss();
           if (i != 8 && i != 12) await alert.accept();
-          // await driver.switchTo().defaultContent();
-          // await driver.manage().window().fullscreen();
           if (i === 6 || i === 8 || i === 10) {
             if (i === 6 || i === 8) id = "confirmResult";
             if (i === 10) id = "promptResult";
@@ -85,7 +77,6 @@ module.exports = {
             }
           }
           await driver.switchTo().defaultContent();
-          await driver.manage().window().fullscreen();
         }
         if (error === false) checkStep.checked(alerts.scenario2.steps[step]);
         error = false;
