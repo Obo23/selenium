@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chromedriver": "^99.0.0",
+    "chromedriver": "99.0.0",
     "date-fns": "^2.28.0",
     "dotenv": "^16.0.0",
     "geckodriver": "^3.0.1",
